@@ -1,0 +1,22 @@
+{
+  "name": "lichess-viewer-wp",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mliebelt/lichess-viewer-wp.git"
+  },
+  "devDependencies": {
+    "lichess-pgn-viewer": "^2.3.0",
+    "@wordpress/env": "^10.15.0",
+    "@wordpress/scripts": "^30.8.1",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^6.0.1",
+    "path-parse": ">=1.0.7"
+  },
+  "scripts": {
+    "start": "wp-env start",
+    "stop": "wp-env stop",
+    "build": "wp-scripts build && mv build/index.js js/index.js"
+  }
+}
