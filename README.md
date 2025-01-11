@@ -14,5 +14,5 @@ Small wrapper around lichess viewer named pgn-viewer for Wordpress. Lichess has 
 * To use that version in Wordpress, do the following steps:
   1. Clone the repository.
   2. Do an `npm install`, then `npm run build`.
-  3. Do a `npm release`.
+  3. Do a `npm run release`.
   4. Upload the created file `lichess-viewer-wp.zip` to your Wordpress instance.
