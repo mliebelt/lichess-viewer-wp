@@ -1,3 +1,22 @@
-:root {
+/* :root {
   --board-color: #82c4e8;
+} */
+
+/* Default board style */
+.lpv__board cg-board {
+  background-image: url(green.png);
+}
+
+/* Blue board style */
+.lpv-board-blue .lpv__board cg-board {
+  background-image: url(blue.png);
+}
+
+/* Add more board styles as needed */
+.lpv-board-wood .lpv__board cg-board {
+  background-image: url(wood.jpg);
+}
+
+.lpv-board-green .lpv__board cg-board {
+  background-image: url(green.png);
 }
