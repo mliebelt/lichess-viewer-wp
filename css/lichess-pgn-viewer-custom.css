@@ -20,3 +20,11 @@
 .lpv-board-green .lpv__board cg-board {
   background-image: url(green.png);
 }
+
+.lpv-board-metal .lpv__board cg-board {
+  background-image: url(metal.jpg);
+}
+
+.lpv-board-newspaper .lpv__board cg-board {
+  background-image: url(newspaper.svg);
+}

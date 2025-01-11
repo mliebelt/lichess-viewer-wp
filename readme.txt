@@ -4,7 +4,7 @@ Donate link:
 Tags: chess, pgn
 Requires at least: 4.6
 Tested up to: 6.8
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,11 @@ Have a look at the GitHub repository https://github.com/mliebelt/PgnViewerJS-WP 
 4. Example for use of pgnPrint (shortcode pgnp).
 
 == Changelog ==
+
+= 1.0.2
+
+* Added some more attributes for ocnfiguration: fen, showclocks, showmoves, showcontrols, scrolltomove, keyboardtomove
+* Some documentation, more boardstyles: green, blue, wood, metal, newspaper.
 
 = 1.0.1
 

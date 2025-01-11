@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Lichess PGN Viewer
+Plugin Name: lichess-viewer-wp
 Description: Shortcode to embed Lichess PGN Viewer
-Version: 1.0.1
+Version: 1.0.2
 Author: Your Name
 */
 
@@ -52,11 +52,14 @@ function lpgnv_shortcode($atts, $content = null) {
     $attributes = shortcode_atts(
         array(
             'fen' => '',
-            'showmoves' => 'right',
-            'showplayers' => 'true',
-            'initialply' => '0',
+            'showclocks' => 'true',
+            'showmoves' => 'auto',
             'showcontrols' => 'true',
+            'scrolltomove' => 'true',
+            'keyboardtomove' => 'true',
             'boardstyle' => '',
+            'initialply' => '0',
+            'orientation' => '',
         ),
         $atts
     );
@@ -65,12 +68,18 @@ function lpgnv_shortcode($atts, $content = null) {
 
     $config = array(
         'pgn' => $content,
-        'fen' => $attributes['fen'],
-        'showMoves' => $attributes['showmoves'],
-        'showPlayers' => $attributes['showplayers'] === 'true',
-        'initialPly' => intval($attributes['initialply']),
+        'fen' => $attributes['fen'] ?: null,
+        'showClocks' => $attributes['showclocks'] === 'true',
+        'showMoves' => $attributes['showmoves'] === 'false' ? false : $attributes['showmoves'],
         'showControls' => $attributes['showcontrols'] === 'true',
+        'scrollToMove' => $attributes['scrolltomove'] === 'true',
+        'keyboardToMove' => $attributes['keyboardtomove'] === 'true',
+        'initialPly' => intval($attributes['initialply']),
+        'orientation' => $attributes['orientation'] ?: null
     );
+
+    // Remove null values from config
+    $config = array_filter($config, function($value) { return $value !== null; });
 
     // Add a custom class based on the boardstyle attribute
     $boardClass = $attributes['boardstyle'] ? ' lpv-board-' . esc_attr($attributes['boardstyle']) : '';
