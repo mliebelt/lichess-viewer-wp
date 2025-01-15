@@ -60,6 +60,7 @@ function lpgnv_shortcode($atts, $content = null) {
             'boardstyle' => '',
             'initialply' => '0',
             'orientation' => '',
+            'theme' => 'dark',
         ),
         $atts
     );
@@ -75,7 +76,8 @@ function lpgnv_shortcode($atts, $content = null) {
         'scrollToMove' => $attributes['scrolltomove'] === 'true',
         'keyboardToMove' => $attributes['keyboardtomove'] === 'true',
         'initialPly' => intval($attributes['initialply']),
-        'orientation' => $attributes['orientation'] ?: null
+        'orientation' => $attributes['orientation'] ?: null,
+        'theme' => $attributes['theme'] ?: 'dark'
     );
 
     // Remove null values from config
@@ -83,8 +85,10 @@ function lpgnv_shortcode($atts, $content = null) {
 
     // Add a custom class based on the boardstyle attribute
     $boardClass = $attributes['boardstyle'] ? ' lpv-board-' . esc_attr($attributes['boardstyle']) : '';
+    $theme = isset($atts['theme']) ? $atts['theme'] : 'dark';
+    $theme_class = 'lpv-theme-' . sanitize_html_class($theme);
 
-    $output = "<div id='$id' class='lpv{$boardClass}'></div>";
+    $output = "<div id='$id' class='lpv{$boardClass} {$theme_class}'></div>";
     $output .= "<script>
     document.addEventListener('DOMContentLoaded', function() {
         if (typeof LichessPgnViewer !== 'undefined') {
