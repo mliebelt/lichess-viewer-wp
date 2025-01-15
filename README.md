@@ -20,6 +20,7 @@ Small wrapper around lichess viewer named pgn-viewer for Wordpress. Lichess has 
   * showcontrols: <boolean>, default true.
   * scrolltomove: <boolean>, default true.
   * keyboardToMove: <boolean>, default true.
+  * theme: <string>, default dark, others are 'light'.
 
 ## Usage
 

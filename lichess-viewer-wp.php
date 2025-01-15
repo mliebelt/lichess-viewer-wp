@@ -2,8 +2,8 @@
 /*
 Plugin Name: lichess-viewer-wp
 Description: Shortcode to embed Lichess PGN Viewer
-Version: 1.0.2
-Author: Your Name
+Version: 1.0.3
+Author: mliebelt
 */
 
 function lpgnv_enqueue_scripts() {
