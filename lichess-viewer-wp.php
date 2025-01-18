@@ -4,12 +4,15 @@ Plugin Name: lichess-viewer-wp
 Description: Shortcode to embed Lichess PGN Viewer
 Version: 1.0.3
 Author: mliebelt
+License: GPL-3.0-or-later
 */
 
 function lpgnv_enqueue_scripts() {
-    wp_enqueue_script('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'js/lichess-pgn-viewer.js', array(), null, true);
-    wp_enqueue_style('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer.css');
-    wp_enqueue_style('lichess-pgn-viewer-custom', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer-custom.css');
+    $plugin_version = '1.0.3'; // Use your plugin's current version
+
+    wp_enqueue_script('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'js/lichess-pgn-viewer.js', array(), $plugin_version, true);
+    wp_enqueue_style('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer.css', array(), $plugin_version);
+    wp_enqueue_style('lichess-pgn-viewer-custom', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer-custom.css', array(), $plugin_version);
 }
 
 function lpgnv_cleanup_pgn($content) {
@@ -93,7 +96,7 @@ function lpgnv_shortcode($atts, $content = null) {
     document.addEventListener('DOMContentLoaded', function() {
         if (typeof LichessPgnViewer !== 'undefined') {
             var viewer = LichessPgnViewer.default || LichessPgnViewer;
-            viewer(document.getElementById('$id'), " . json_encode($config, JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ");
+            viewer(document.getElementById('$id'), " . wp_json_encode($config, JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ");
         } else {
             console.error('LichessPgnViewer is not defined');
         }
