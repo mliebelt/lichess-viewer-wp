@@ -30,11 +30,16 @@
 }
 
 .lpv.lpv-theme-light,
+.lpv-theme-light .lpv__fbt,
 .lpv-theme-light .lpv__player,
-.lpv-theme-light .lpv__moves {
+.lpv-theme-light .lpv__moves,
+.lpv-theme-light .lpv__menu,
+.lpv-theme-light .lpv__pane {
   --c-lpv-bg: #eeeeee;
   --c-lpv-bg-variation: #dedede;
   --c-lpv-bg-movelist: #eeeeee;
+  --c-lpv-bg-pane: #eeeeee;
+  --c-lpv-pgn-text: #eeeeee;
   --c-lpv-bg-controls: #eeeeee;
   --c-lpv-bg-player: #eeeeee;
   --c-lpv-font: #333;
@@ -42,7 +47,8 @@
 }
 
 @media (hover: hover) {
-  .lpv__fbt:hover:not(:disabled):not([disabled])::before {
+  .lpv__fbt:hover:not(.disabled):not([disabled])::before,
+  .lpv__fbt:hover:not(.disabled):not([disabled]) {
     color: #3c3;
   }
 }
