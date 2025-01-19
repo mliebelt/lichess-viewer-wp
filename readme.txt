@@ -51,11 +51,12 @@ The parameters the viewer understands are:
   * boardstyle: <string>, default 'green', available 'blue', 'wood'.
   * orientation: <string>, no default, then taken from tag Orientation. Possible values 'white' or 'black'.
   * showclocks: <boolean>, default true.
-  * showmoves: <string|boolean>, default 'auto', others 'right', 'bottom', false.
+  * showmoves: <string|boolean>, default 'auto', others 'right', 'bottom', false. bottom is the same as false, and does not show the moves.
   * showcontrols: <boolean>, default true.
   * scrolltomove: <boolean>, default true.
   * keyboardToMove: <boolean>, default true.
   * theme: <string>, default dark, others are 'light'.
+  * initialply: <number>, default 0, shows the position after the `initialPly` move. Only main lines allowed.
 
 The following code shows how to use some of the parameters in a page:
 
