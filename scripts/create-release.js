@@ -2,7 +2,7 @@ const fs = require("fs");
 const archiver = require("archiver");
 const path = require("path");
 
-const output = fs.createWriteStream("lichess-viewer-wp.zip");
+const output = fs.createWriteStream("pgn-viewer-for-lichess.zip");
 const archive = archiver("zip", {
   zlib: { level: 9 }, // Sets the compression level.
 });
@@ -25,7 +25,9 @@ archive.directory("css/", "css");
 archive.directory("js/", "js");
 
 // Add individual files
-archive.file("lichess-viewer-wp.php", { name: "lichess-viewer-wp.php" });
+archive.file("pgn-viewer-for-lichess.php", {
+  name: "pgn-viewer-for-lichess.php",
+});
 archive.file("readme.txt", { name: "readme.txt" });
 
 archive.finalize();

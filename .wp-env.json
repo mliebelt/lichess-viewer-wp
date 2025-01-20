@@ -1,6 +1,7 @@
 {
   "core": "WordPress/WordPress",
   "phpVersion": "7.4",
+  "port": 8898,
   "config": {
     "WP_DEBUG": true,
     "WP_DEBUG_LOG": true,

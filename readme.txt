@@ -1,4 +1,4 @@
-=== lichess-viewer-wp ===
+=== pgn-viewer-for-lichess ===
 Contributors: mliebelt
 Donate link:
 Tags: chess, pgn, lichess
@@ -72,6 +72,10 @@ Have a look at the GitHub repository https://github.com/mliebelt/lichess-viewer-
 1. Example for use of lpgnv, theme=light, orientation=black
 
 == Changelog ==
+
+= 1.0.4
+
+* Renamed the plugin to meet the requirements of Wordpress.
 
 = 1.0.3
 

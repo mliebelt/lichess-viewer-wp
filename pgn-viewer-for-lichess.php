@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: lichess-viewer-wp
-Description: Shortcode to embed Lichess PGN Viewer
-Version: 1.0.3
+Plugin Name: pgn-viewer-for-lichess
+Description: Shortcode to embed Lichess PGN Viewer into Wordpress
+Version: 1.0.4
 Author: mliebelt
 License: GPL-3.0-or-later
 */
