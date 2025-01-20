@@ -29,6 +29,7 @@
   background-image: url(newspaper.svg);
 }
 
+/* Light scheme. */
 .lpv.lpv-theme-light,
 .lpv-theme-light .lpv__fbt,
 .lpv-theme-light .lpv__player,
@@ -44,6 +45,42 @@
   --c-lpv-bg-player: #eeeeee;
   --c-lpv-font: #333;
   --c-lpv-font-shy: #444;
+}
+
+/* Solarized Light scheme */
+.lpv.lpv-theme-solarizedlight,
+.lpv-theme-solarizedlight .lpv__fbt,
+.lpv-theme-solarizedlight .lpv__player,
+.lpv-theme-solarizedlight .lpv__moves,
+.lpv-theme-solarizedlight .lpv__menu,
+.lpv-theme-solarizedlight .lpv__pane {
+  --c-lpv-bg: #fdf6e3; /* base3: main background */
+  --c-lpv-bg-variation: #eee8d5; /* base2: variation background */
+  --c-lpv-bg-movelist: #fdf6e3; /* base3: movelist background */
+  --c-lpv-bg-pane: #fdf6e3; /* base3: pane background */
+  --c-lpv-pgn-text: #fdf6e3; /* base3: pgn text */
+  --c-lpv-bg-controls: #fdf6e3; /* base3: controls background */
+  --c-lpv-bg-player: #fdf6e3; /* base3: player background */
+  --c-lpv-font: #657b83; /* base00: main font color */
+  --c-lpv-font-shy: #93a1a1; /* base1: secondary font color */
+}
+
+/* Solarized Dark scheme */
+.lpv.lpv-theme-solarizeddark,
+.lpv-theme-solarizeddark .lpv__fbt,
+.lpv-theme-solarizeddark .lpv__player,
+.lpv-theme-solarizeddark .lpv__moves,
+.lpv-theme-solarizeddark .lpv__menu,
+.lpv-theme-solarizeddark .lpv__pane {
+  --c-lpv-bg: #002b36; /* base03: main background */
+  --c-lpv-bg-variation: #073642; /* base02: variation background */
+  --c-lpv-bg-movelist: #002b36; /* base03: movelist background */
+  --c-lpv-bg-pane: #002b36; /* base03: pane background */
+  --c-lpv-pgn-text: #002b36; /* base03: pgn text */
+  --c-lpv-bg-controls: #002b36; /* base03: controls background */
+  --c-lpv-bg-player: #002b36; /* base03: player background */
+  --c-lpv-font: #93a1a1; /* base1: main font color */
+  --c-lpv-font-shy: #586e75; /* base01: secondary font color */
 }
 
 @media (hover: hover) {
