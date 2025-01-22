@@ -4,7 +4,7 @@ Donate link:
 Tags: chess, pgn, lichess
 Requires at least: 4.6
 Tested up to: 6.8
-Stable tag: 1.0.5
+Stable tag: 1.1.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,7 +31,7 @@ This is the lichess-pgn-viewer: allows to play through a game (including variati
 
 You can use instead the following:
 
-1. Enter as block element `/Lichess PGN Viewer`.
+1. Enter as block element `/PGN Viewer for Lichess`.
 2. You will then have a form with all options that are possible with the shortcode as well.
 
 == Installation ==
@@ -72,8 +72,14 @@ Have a look at the GitHub repository https://github.com/mliebelt/pgn-viewer-for-
 1. Example for use of lpgnv, theme=light, orientation=black
 2. Example with default orientation and theme, with some complex position showing variations.
 3. Game of the month December 2024 from Lichess, directly taken. Shows players, their rating, later times spent, ...
+4. Block editor with some non-default values set.
+5. Result of that block editor saved then.
 
 == Changelog ==
+
+= 1.1.0
+
+* Added block editor with all possible attributes as widgets.
 
 = 1.0.5
 
