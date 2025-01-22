@@ -2,7 +2,7 @@
 /*
 Plugin Name: pgn-viewer-for-lichess
 Description: Shortcode to embed Lichess PGN Viewer into WordPress
-Version: 1.1.0
+Version: 1.1.1
 Author: mliebelt
 License: GPL-3.0-or-later
 */
@@ -10,12 +10,29 @@ License: GPL-3.0-or-later
 /* Reocmmendation of WordPress plugin team */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-$plugin_version = '1.1.0'; // Use your plugin's current version
+define('LPGNV_VERSION', '1.1.1'); // Define constant at the top of your file
 
 function lpgnv_enqueue_scripts() {
-    wp_enqueue_script('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'js/lichess-pgn-viewer.js', array(), $plugin_version, true);
-    wp_enqueue_style('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer.css', array(), $plugin_version);
-    wp_enqueue_style('lichess-pgn-viewer-custom', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer-custom.css', array(), $plugin_version);
+    wp_enqueue_script('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'js/lichess-pgn-viewer.js', array(), LPGNV_VERSION, true);
+    wp_enqueue_style('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer.css', array(), LPGNV_VERSION);
+    wp_enqueue_style('lichess-pgn-viewer-custom', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer-custom.css', array(), LPGNV_VERSION);
+}
+
+function lpgnv_block_assets() {
+    wp_enqueue_style(
+        'lpgnv-editor-style',
+        plugins_url('css/editor.css', __FILE__),
+        array(),
+        LPGNV_VERSION
+    );
+
+    wp_enqueue_script(
+        'lpgnv-editor',
+        plugins_url('js/index.js', __FILE__),
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components'),
+        LPGNV_VERSION,
+        true
+    );
 }
 
 function lpgnv_cleanup_pgn($content) {
@@ -110,23 +127,6 @@ function lpgnv_shortcode($atts, $content = null) {
 }
 add_shortcode('lpgnv', 'lpgnv_shortcode');
 
-// Register block editor assets
-function lpgnv_block_assets() {
-    wp_enqueue_style(
-        'lpgnv-editor-style',
-        plugins_url('css/editor.css', __FILE__),
-        array(),
-        $plugin_version
-    );
-
-    wp_enqueue_script(
-        'lpgnv-editor',
-        plugins_url('js/index.js', __FILE__),
-        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components'),
-        $plugin_version,
-        true
-    );
-}
 add_action('enqueue_block_editor_assets', 'lpgnv_block_assets');
 
 // Register the block
