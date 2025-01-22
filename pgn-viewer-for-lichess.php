@@ -2,7 +2,7 @@
 /*
 Plugin Name: pgn-viewer-for-lichess
 Description: Shortcode to embed Lichess PGN Viewer into WordPress
-Version: 1.0.4
+Version: 1.0.5
 Author: mliebelt
 License: GPL-3.0-or-later
 */

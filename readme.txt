@@ -4,7 +4,7 @@ Donate link:
 Tags: chess, pgn, lichess
 Requires at least: 4.6
 Tested up to: 6.8
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -55,7 +55,7 @@ The parameters the viewer understands are:
   * showcontrols: <boolean>, default true.
   * scrolltomove: <boolean>, default true.
   * keyboardToMove: <boolean>, default true.
-  * theme: <string>, default dark, others are 'light'.
+  * theme: <string>, default dark, others are 'light', 'solarizeddark' and 'solarizedlight'.
   * initialply: <number>, default 0, shows the position after the `initialPly` move. Only main lines allowed.
 
 The following code shows how to use some of the parameters in a page:
@@ -73,9 +73,13 @@ Have a look at the GitHub repository https://github.com/mliebelt/lichess-viewer-
 
 == Changelog ==
 
+= 1.0.5
+
+* Added themes solarizeddark and solarizedlight.
+
 = 1.0.4
 
-* Renamed the plugin to meet the requirements of Wordpress.
+* Renamed the plugin to meet the requirements of WordPress.
 
 = 1.0.3
 

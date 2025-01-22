@@ -20,7 +20,7 @@ Small wrapper around lichess viewer named lichess-pgn-viewer for WordPress. Lich
   * showcontrols: <boolean>, default true.
   * scrolltomove: <boolean>, default true.
   * keyboardToMove: <boolean>, default true.
-  * theme: <string>, default dark, others are 'light'.
+  * theme: <string>, default dark, others are 'light', 'solarizeddark' and 'solarizedlight'.
   * initialply: <number>, default 0, shows the position after the `initialPly` move. Only main lines allowed.
 
 ## Usage
