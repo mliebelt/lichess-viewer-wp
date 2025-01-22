@@ -1,11 +1,14 @@
 <?php
 /*
 Plugin Name: pgn-viewer-for-lichess
-Description: Shortcode to embed Lichess PGN Viewer into Wordpress
+Description: Shortcode to embed Lichess PGN Viewer into WordPress
 Version: 1.0.4
 Author: mliebelt
 License: GPL-3.0-or-later
 */
+
+/* Reocmmendation of WordPress plugin team */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 function lpgnv_enqueue_scripts() {
     $plugin_version = '1.0.3'; // Use your plugin's current version
