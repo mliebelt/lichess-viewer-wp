@@ -27,7 +27,7 @@ This is the lichess-pgn-viewer: allows to play through a game (including variati
 
 === Using Block Level Element ===
 
-<NOT IMLEMENTED YET>
+**NOT IMLEMENTED YET**
 
 You can use instead the following:
 
@@ -65,11 +65,13 @@ The following code shows how to use some of the parameters in a page:
 
 = Where can I find more information about the implementation? =
 
-Have a look at the GitHub repository https://github.com/mliebelt/lichess-viewer-wp and look there at the file `package.json` to get hints how to develop the plugin then.
+Have a look at the GitHub repository https://github.com/mliebelt/pgn-viewer-for-lichess and look there at the file `package.json` to get hints how to develop the plugin then.
 
 == Screenshots ==
 
 1. Example for use of lpgnv, theme=light, orientation=black
+2. Example with default orientation and theme, with some complex position showing variations.
+3. Game of the month December 2024 from Lichess, directly taken. Shows players, their rating, later times spent, ...
 
 == Changelog ==
 

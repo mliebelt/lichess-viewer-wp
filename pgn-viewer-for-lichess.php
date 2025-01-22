@@ -10,9 +10,9 @@ License: GPL-3.0-or-later
 /* Reocmmendation of WordPress plugin team */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-function lpgnv_enqueue_scripts() {
-    $plugin_version = '1.0.3'; // Use your plugin's current version
+$plugin_version = '1.0.5'; // Use your plugin's current version
 
+function lpgnv_enqueue_scripts() {
     wp_enqueue_script('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'js/lichess-pgn-viewer.js', array(), $plugin_version, true);
     wp_enqueue_style('lichess-pgn-viewer', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer.css', array(), $plugin_version);
     wp_enqueue_style('lichess-pgn-viewer-custom', plugin_dir_url(__FILE__) . 'css/lichess-pgn-viewer-custom.css', array(), $plugin_version);
@@ -109,3 +109,38 @@ function lpgnv_shortcode($atts, $content = null) {
     return $output;
 }
 add_shortcode('lpgnv', 'lpgnv_shortcode');
+
+// Register block editor assets
+function lpgnv_block_assets() {
+    wp_enqueue_style(
+        'lpgnv-editor-style',
+        plugins_url('css/editor.css', __FILE__),
+        array(),
+        $plugin_version
+    );
+
+    wp_enqueue_script(
+        'lpgnv-editor',
+        plugins_url('js/index.js', __FILE__),
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components'),
+        $plugin_version,
+        true
+    );
+}
+add_action('enqueue_block_editor_assets', 'lpgnv_block_assets');
+
+// Register the block
+function lpgnv_register_block() {
+    if (function_exists('register_block_type')) {
+        register_block_type('lichess-pgn-viewer/block-editor', array(
+            'editor_script' => 'lpgnv-editor',
+            'render_callback' => 'lpgnv_render_block'
+        ));
+    }
+}
+add_action('init', 'lpgnv_register_block');
+
+// Block render callback
+function lpgnv_render_block($attributes, $content) {
+    return lpgnv_shortcode($attributes, $attributes['pgn'] ?? '');
+}

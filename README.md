@@ -39,9 +39,12 @@ Here an example with much more attributes.
 ```
 
 
-## Current State
+## Current State and Plans
 
-* Not published yet.
+* Published in version 1.0.5, see changelog for details.
+* shortcode is feature complete.
+* Do a block editor ([#6](https://github.com/mliebelt/pgn-viewer-for-lichess/issues/6)), jump to version 1.1.0.
+* Do a default view for admins ([#7](https://github.com/mliebelt/pgn-viewer-for-lichess/issues/)), jump to version 1.2.0 then.
 * To use that version in WordPress, do the following steps:
   1. Clone the repository.
   2. Do an `npm install`, then `npm run build`.
